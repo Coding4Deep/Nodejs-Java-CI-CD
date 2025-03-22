@@ -13,13 +13,14 @@ This repository consists of **two Jenkins pipelines**, each handling different p
 - **Code Quality Analysis**: Runs **SonarQube** to ensure high-quality code.
 - **Artifact Deployment**: Deploys to **Nexus** for artifact storage.
 - **Application Deployment**: Deploys the Java application to **Tomcat**.
-- **Triggers Pipeline 2**: On success, automatically triggers **Pipeline 2** (Node.js).
+- **Triggers Pipeline 2**: Parallerly, automatically triggers **Pipeline 2** (Node.js).
 
 ### 2️⃣ **Pipeline 2 - Node.js Application** (npm-based)
 - **Automated Checkout**: Pulls the Node.js application from GitHub.
 - **Dependency Management**: Installs all required dependencies using **npm**.
 - **Unit & Jest Tests**: Runs tests to ensure application integrity.
 - **Code Quality Analysis**: Performs **SonarQube** code analysis.
+- **Deploy to Nexus**: Deploys the artifact to **Nexus** for versioning.
 - **Application Deployment**: Deploys the Node.js application using **PM2**.
 - **PM2 Status Check**: Verifies if the app is running successfully.
 
@@ -131,10 +132,3 @@ Clone this repository and adapt it to your own needs. Customize the pipeline scr
 
 ---
 
-### 📜 **License**
-
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to explore and contribute! Let’s automate and build better software! 🌟
