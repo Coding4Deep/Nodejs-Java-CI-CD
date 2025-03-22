@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com</groupId>
-    <artifactId>Declarative-Pipeline</artifactId>
+    <artifactId>JAVA-PROJECT</artifactId>
     <version>3.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <url>http://maven.apache.org</url>
@@ -87,7 +87,7 @@
     </dependencies>
 
     <build>
-        <finalName>Pipeline-Project</finalName>
+        <finalName>JAVA-PROJECT</finalName>
         <plugins>
             <!-- Compiler Plugin -->
             <plugin>
