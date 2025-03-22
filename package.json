@@ -34,13 +34,6 @@
     "!coverage/**",
     "!sonar-project.properties"
   ],
-  "reporters": [
-    "default",
-    ["jest-sonar-reporter", {
-      "outputDirectory": "test-results", 
-      "outputName": "test-report.xml"
-    }]
-  ]
 }
 
   "dependencies": {
