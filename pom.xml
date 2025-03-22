@@ -5,13 +5,15 @@
 
     <groupId>com</groupId>
     <artifactId>JAVA-PROJECT</artifactId>
-    <version>3.1-SNAPSHOT</version>
+    <version>${BUILD_NUMBER}-${revision}-SNAPSHOT</version>
     <packaging>war</packaging>
     <url>http://maven.apache.org</url>
 
 <properties> 
 <maven.compiler.source>17</maven.compiler.source> 
 <maven.compiler.target>17</maven.compiler.target> 
+<revision>${maven.build.timestamp}</revision>
+maven.build.timestamp.format>yyyy_dd--HH_mm_ss</maven.build.timestamp.format>
 <!--<sonar.host.url>http://192.168.33.11:9000</sonar.host.url>
 <sonar.token>sqa_1ea1d49ee057cab0d34953dcb1bfe79d78099b1d</sonar.token>--> 
 </properties>
