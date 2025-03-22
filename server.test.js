@@ -1,6 +1,7 @@
 const request = require('supertest');
 const express = require('express');
-const app = require('./server'); // Ensure your server exports 'app'
+const app = require('./server').default || require('./server');
+ // Ensure your server exports 'app'
 
 describe('Calculator API Endpoints', () => {
     it('should add two numbers', async () => {
