@@ -5,10 +5,8 @@ const Calculator = require('./calculator');
 const app = express();
 const calculator = new Calculator();
 
-// Serve static files (HTML, CSS, JS)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// API Endpoints
 app.get('/add', (req, res) => {
     const { a, b } = req.query;
     res.json({ result: calculator.add(Number(a), Number(b)) });
@@ -33,9 +31,12 @@ app.get('/divide', (req, res) => {
     }
 });
 
-// Start the server
-const PORT = 3000;
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server running at http://0.0.0.0:${PORT}`);
-});
+// Start the server only if not in a test environment
+if (require.main === module) {
+    const PORT = 3000;
+    app.listen(PORT, '0.0.0.0', () => {
+        console.log(`Server running at http://0.0.0.0:${PORT}`);
+    });
+}
 
+module.exports = app;
