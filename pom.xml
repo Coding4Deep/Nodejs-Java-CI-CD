@@ -143,6 +143,11 @@
                     <goals>
                         <goal>report</goal>	    
                     </goals>
+		   <configuration>
+                        <reports>
+                            <report>xml</report> <!-- This ensures jacoco.xml is generated -->
+                        </reports>
+                   </configuration>
                 </execution>
             </executions>
         </plugin>
