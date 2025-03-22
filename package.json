@@ -18,24 +18,31 @@
     "supertest": "^6.3.3"
     "jest-sonar-reporter": "^1.0.0" 
   },
-  "jest": {
-    "collectCoverage": true,
-    "coverageDirectory": "coverage",
-    "coverageReporters": [
-      "json",
-      "lcov",
-      "text",
-      "clover",
-      "cobertura"
-    ],
-    "collectCoverageFrom": [
-      "**/*.js",
-      "!node_modules/**",
-      "!coverage/**",
-      "!sonar-project.properties"
-    ],
-      "testResultsProcessor": "jest-sonar-reporter"  
-  },
+ "jest": {
+  "collectCoverage": true,
+  "coverageDirectory": "coverage",
+  "coverageReporters": [
+    "json",
+    "lcov",
+    "text",
+    "clover",
+    "cobertura"
+  ],
+  "collectCoverageFrom": [
+    "**/*.js",
+    "!node_modules/**",
+    "!coverage/**",
+    "!sonar-project.properties"
+  ],
+  "reporters": [
+    "default",
+    ["jest-sonar-reporter", {
+      "outputDirectory": "test-results", 
+      "outputName": "test-report.xml"
+    }]
+  ]
+}
+
   "dependencies": {
     "express": "^4.21.2"
   }
