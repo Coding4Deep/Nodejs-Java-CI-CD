@@ -74,10 +74,8 @@
       <nav class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
           <a href="#" class="text-2xl font-['Pacifico'] text-primary"
-            >Deepak Sagar</a
-            <a href="HELLO-SERVLET">Go to Hello Servlet</a>
-
-          >
+            >Deepak Sagar</a>
+       <a href="hello">Go to Hello Servlet</a>
           <div class="hidden md:flex space-x-8">
             <a
               href="#home"
