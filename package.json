@@ -12,7 +12,7 @@
   "jest-junit": {
        "outputDirectory": "test-reports",
        "outputName": "results.xml"
-}
+},
   "author": "",
   "license": "ISC",
   "devDependencies": {
