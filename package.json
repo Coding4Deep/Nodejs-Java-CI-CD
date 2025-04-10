@@ -9,6 +9,10 @@
     "sonar": "sonar-scanner",
     "coverage": "nyc --reporter=lcov --reporter=text npm test"
   },
+  "jest-junit": {
+       "outputDirectory": "test-reports",
+       "outputName": "results.xml"
+}
   "author": "",
   "license": "ISC",
   "devDependencies": {
