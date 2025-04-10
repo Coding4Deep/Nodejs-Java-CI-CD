@@ -1,5 +1,5 @@
 {
-  "name": "node-docker-project",
+  "name": "node-docker-ci-project",
   "version": "1.0.0",
   "description": "this project is for jenkins pipeline",
   "main": "calculator.js",
