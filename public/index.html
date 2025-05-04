@@ -1,37 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
-        input, button { margin: 5px; padding: 10px; font-size: 18px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .calculator {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 350px;
+      width: 100%;
+    }
+
+    .calculator h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .calculator input {
+      width: 45%;
+      padding: 12px;
+      margin: 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .buttons {
+      margin-top: 15px;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      background-color: #4f46e5;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .buttons button:hover {
+      background-color: #3730a3;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #111827;
+    }
+  </style>
 </head>
 <body>
-    <h1>Calculator</h1>
-    <input type="number" id="num1" placeholder="Enter first number">
-    <input type="number" id="num2" placeholder="Enter second number">
-    <br>
-    <button onclick="calculate('add')">+</button>
-    <button onclick="calculate('subtract')">-</button>
-    <button onclick="calculate('multiply')">×</button>
-    <button onclick="calculate('divide')">÷</button>
-    <br>
-    <h2>Result: <span id="result">-</span></h2>
+  <div class="calculator">
+    <h1>CALCULATOR</h1>
+    <input type="number" id="num1" placeholder="First number" />
+    <input type="number" id="num2" placeholder="Second number" />
+    <div class="buttons">
+      <button onclick="calculate('add')">+</button>
+      <button onclick="calculate('subtract')">−</button>
+      <button onclick="calculate('multiply')">×</button>
+      <button onclick="calculate('divide')">÷</button>
+    </div>
+    <div class="result">
+      Result: <span id="result">-</span>
+    </div>
+  </div>
 
-    <script>
-        function calculate(operation) {
-            const num1 = document.getElementById("num1").value;
-            const num2 = document.getElementById("num2").value;
+  <script>
+    function calculate(operation) {
+      const num1 = document.getElementById("num1").value;
+      const num2 = document.getElementById("num2").value;
 
-            fetch(`/${operation}?a=${num1}&b=${num2}`)
-                .then(response => response.json())
-                .then(data => document.getElementById("result").innerText = data.result)
-                .catch(error => console.error("Error:", error));
-        }
-    </script>
+      if (!num1 || !num2) {
+        document.getElementById("result").innerText = "Please enter both numbers";
+        return;
+      }
+
+      fetch(`/${operation}?a=${num1}&b=${num2}`)
+        .then((response) => response.json())
+        .then((data) => {
+          document.getElementById("result").innerText = data.result;
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          document.getElementById("result").innerText = "Error occurred";
+        });
+    }
+  </script>
 </body>
 </html>
-
