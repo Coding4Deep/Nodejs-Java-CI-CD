@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com</groupId>
-    <artifactId>JAVA-PROJECT</artifactId>
-    <version>${BUILD_NUMBER}-${revision}-SNAPSHOT</version>
+    <artifactId>k8s</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <url>http://maven.apache.org</url>
 
@@ -89,7 +89,7 @@
     </dependencies>
 
     <build>
-        <finalName>JAVA-PROJECT</finalName>
+        <finalName>k8s</finalName>
         <plugins>
             <!-- Compiler Plugin -->
             <plugin>
