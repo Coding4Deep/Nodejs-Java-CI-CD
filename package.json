@@ -4,6 +4,7 @@
   "description": "this project is for jenkins pipeline",
   "main": "calculator.js",
   "scripts": {
+     "start": "node server.js",
     "clean": "rm -rf node_modules package-lock.json coverage",
     "test": "nyc --reporter=lcov jest --coverage --collectCoverageFrom=**/*.js",
     "sonar": "sonar-scanner",
