@@ -1,4 +1,4 @@
-# CI/CD Pipeline for Java and Node.js Applications 🚀
+# CI/CD Pipeline for Java and Node.js Applications 
 
 Welcome to the **CI/CD Pipeline Project**, a modern, automated solution for building, testing, and deploying **Java** and **Node.js** applications using **Jenkins**. This project demonstrates a seamless, fully integrated pipeline that ensures both applications are consistently deployed with top-notch code quality checks, automated testing, and efficient management.
 
