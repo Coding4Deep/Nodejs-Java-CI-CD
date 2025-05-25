@@ -79,7 +79,11 @@
             <version>2.3.3</version>
             <scope>provided</scope>
         </dependency>
-
+          <dependency>
+             <groupId>io.awspring.cloud</groupId>
+             <artifactId>spring-cloud-starter-aws-secrets-manager-config</artifactId>
+             <version>2.4.0</version> <!-- check latest -->
+         </dependency>
         <!-- JSTL (JSP Standard Tag Library) -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -160,17 +164,26 @@
 
 
 
-<distributionManagement>
+  <distributionManagement>
     <repository>
         <id>nexus</id>
         <url>http://65.0.104.25:8081/repository/release/</url>
-</repository>
-
+    </repository>
     <snapshotRepository>
         <id>nexus</id>
         <url>http://192.168.33.11:8081/repository/JAVA-PROJECT/</url>
     </snapshotRepository>
-</distributionManagement>
+	  
+    <dependencies>
+        <dependency>
+           <groupId>org.springframework.cloud</groupId>
+           <artifactId>spring-cloud-dependencies</artifactId>
+           <version>2022.0.4</version>
+           <type>pom</type>
+           <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
 
 
 
