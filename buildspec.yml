@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  build:
+    commands:
+      - mvn clean package -DskipTests
+      - cp target/*.jar application.jar
+artifacts:
+  files:
+    - application.jar
