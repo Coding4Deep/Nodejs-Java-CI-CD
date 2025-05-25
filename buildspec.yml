@@ -12,3 +12,4 @@ phases:
 artifacts:
   files:
     - application.war
+    - Procfile
