@@ -164,7 +164,7 @@
 
 
 
-  <distributionManagement>
+<distributionManagement>
     <repository>
         <id>nexus</id>
         <url>http://65.0.104.25:8081/repository/release/</url>
@@ -173,7 +173,9 @@
         <id>nexus</id>
         <url>http://192.168.33.11:8081/repository/JAVA-PROJECT/</url>
     </snapshotRepository>
-	  
+</distributionManagement>
+
+<dependencyManagement>
     <dependencies>
         <dependency>
            <groupId>org.springframework.cloud</groupId>
@@ -184,6 +186,8 @@
         </dependency>
     </dependencies>
 </dependencyManagement>
+
+  
 
 
 
